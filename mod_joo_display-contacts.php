@@ -13,4 +13,5 @@ require_once __DIR__ . '/helper.php';
 
 $class_sfx = htmlspecialchars($params->get('class_sfx'));
 
+$contacts = modDisplayContactsHelper::getContacts($params);
 require(JModuleHelper::getLayoutPath('mod_joo_display-contacts', $params->get('layout', 'default')));
