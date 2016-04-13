@@ -23,7 +23,8 @@ foreach ($contacts as $contact) {
 	*/
 
 ?>
-	<img src="<?php echo JURI::base()  . '/' . htmlspecialchars($contact->image);?>" alt="<?php echo $contact->name;?>" class="img-circle">
+
+	<img src="<?php echo JURI::base()  . '/' . htmlspecialchars($contact->image);?>" alt="<?php echo $contact->name;?>" class="img-circle" style="width: 140px; height: 140px;">
 	<p><?php echo $contact->name;?></p>
 	<p><small><?php echo $contact->con_position;?></small></p>
 	<a href="tel:<?php echo $contact->mobile;?>" target="_blank"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span><?php echo $contact->mobile;?></a>

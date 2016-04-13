@@ -16,10 +16,15 @@ defined('_JEXEC') or die;
 class modDisplayContactsHelper {
 	public static function getContacts($params) {
 		$result = [];
+		$contactsCategory = $params['contacts_category'];
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-		            ->select($db->quoteName(array('id', 'name', 'alias', 'con_position', 'address', 'telephone', 'image', 'email_to', 'user_id', 'mobile')))
-		            ->from($db->quoteName('#__contact_details'));
+		            ->select($db->quoteName(array('a.id', 'a.name', 'a.alias', 'a.con_position', 'a.address', 'a.telephone', 'a.image', 'a.email_to', 'a.user_id', 'a.mobile')))
+		            ->from($db->quoteName('#__contact_details', 'a'))
+    				->join('INNER', $db->quoteName('#__categories', 'b') . ' ON (' . $db->quoteName('a.catid') . ' = ' . $db->quoteName('b.id') . ')')
+    				->where($db->quoteName('b.title') . ' LIKE \'%' . $contactsCategory . '%\'');
+
+
 		$db->setQuery($query);
 
 		$result = $db->loadObjectList();
