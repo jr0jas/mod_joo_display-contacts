@@ -30,6 +30,10 @@
 	<languages>
 		<language tag="en-GB">en-GB.mod_joo_display-contacts.ini</language>
 		<language tag="en-GB">en-GB.mod_joo_display-contacts.sys.ini</language>
+		<language tag="en-US">en-US.mod_joo_display-contacts.ini</language>
+		<language tag="en-US">en-US.mod_joo_display-contacts.sys.ini</language>
+		<language tag="es-ES">es-ES.mod_joo_display-contacts.ini</language>
+		<language tag="es-ES">es-ES.mod_joo_display-contacts.sys.ini</language>
 	</languages>
 
 	<config>
@@ -83,4 +87,25 @@
 			</fieldset>
 		</fields>
 	</config>
+
+	<install>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+         <file driver="sqlazure" charset="utf8">sql/sqlazure/install.sqlazure.utf8.sql</file>
+     </sql>
+	</install>
+	 
+	<uninstall>
+	     <sql>
+	         <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+	         <file driver="sqlazure" charset="utf8">sql/sqlazure/uninstall.sqlazure.utf8.sql</file>
+	     </sql>
+	</uninstall>
+	 
+	<update> 
+	    <schemas>
+	        <schemapath type="mysql">sql/mysql/updates</schemapath> 
+		<schemapath type="sqlazure">sql/sqlazure/updates</schemapath> 
+	    </schemas> 
+	</update>
 </extension>

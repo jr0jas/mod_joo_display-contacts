@@ -13,6 +13,16 @@ defined('_JEXEC') or die;
  * @package		Joomla.Site
  * @subpakage	joomla.una.ac.cr.display-contacts
  */
-class modJOO_display-contactsHelper {
-	
+class modDisplayContactsHelper {
+	public static function getContacts($params) {
+		$result = [];
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true)
+		            ->select($db->quoteName(array('id', 'name', 'alias', 'con_position', 'address', 'telephone', 'image', 'email_to', 'user_id', 'mobile')))
+		            ->from($db->quoteName('#__contact_details'));
+		$db->setQuery($query);
+
+		$result = $db->loadObjectList();
+		return $result;
+	}
 }
