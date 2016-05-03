@@ -7,13 +7,11 @@
 // no direct access
 defined('_JEXEC') or die;
 
-<<<<<<< HEAD
 ?>
 <ul class="list-unstyled list-inline">
 <?php
 
-=======
->>>>>>> 33bd148edc81c336aabf750a66d9b88bad6008da
+
 foreach ($contacts as $contact) {
 
 	/*
@@ -28,7 +26,6 @@ foreach ($contacts as $contact) {
 	<?php echo $contact->user_id.'<br />';?>
 	<?php echo $contact->mobile.'<br />';?>
 	*/
-<<<<<<< HEAD
 
 ?>
 	<li>
@@ -45,22 +42,8 @@ foreach ($contacts as $contact) {
 ?>
 
 </ul>
-=======
 
 ?>
-
-	<img src="<?php echo JURI::base()  . '/' . htmlspecialchars($contact->image);?>" alt="<?php echo $contact->name;?>" class="img-circle" style="width: 140px; height: 140px;">
-	<p><?php echo $contact->name;?></p>
-	<p><small><?php echo $contact->con_position;?></small></p>
-	<a href="tel:<?php echo $contact->mobile;?>" target="_blank"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span><?php echo $contact->mobile;?></a>
-	<a href="mailto:<?php echo $contact->email_to;?>" target="_blank"><span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span><?php echo $contact->email_to;?></a>
-<?php
-
-}
-
-?>
->>>>>>> 33bd148edc81c336aabf750a66d9b88bad6008da
-
 
 
 

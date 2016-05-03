@@ -10,11 +10,7 @@ defined('_JEXEC') or die;
 // include the syndicate functions only once
 require_once __DIR__ . '/helper.php';
 
-
 $class_sfx = htmlspecialchars($params->get('class_sfx'));
-<<<<<<< HEAD
 
-=======
->>>>>>> 33bd148edc81c336aabf750a66d9b88bad6008da
 $contacts = modDisplayContactsHelper::getContacts($params);
 require(JModuleHelper::getLayoutPath('mod_joo_display-contacts', $params->get('layout', 'default')));
